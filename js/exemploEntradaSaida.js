@@ -5,6 +5,12 @@ console.log('Curso: ' + curso);
 let fase = Number(prompt('Informe a fase: '));
 console.log(fase + 'a fase');
 
+/* 
+ENTRADAS E SAÍDAS
+- prompt = captura uma informação (teclado)
+- console.log = imprime uma informação no terminal (System.out.print)
+*/
+
 /*
 ORDEM DOS COMANDOS 
 - PARA RODAR O CÓDIGO 

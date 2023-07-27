@@ -6,7 +6,13 @@ let fase = Number(prompt('Informe a fase: '));
 console.log(fase + 'a fase');
 
 /*
-ORDEM DOS COMANDOS PARA RODAR O CÓDIGO 
+ORDEM DOS COMANDOS 
+- PARA RODAR O CÓDIGO 
 1. npm install prompt-sync
 2. node nomeDaClasse/nomeDoFile
+
+- PARA CONECTAR COM O GITHUB E FAZER COMMIT AND PUSH
+3. git config --global user.name "Bárbara Luersen"
+4. git config --global user.email barbaraluersenlima@gmail.com
 */
+

@@ -9,7 +9,7 @@ imprimir(resultado);
 
 //PROCEDIMENTOS (não te retorno)
 function imprimir(resultado) {
-  console.log("Resultado: " + resultado);
+  console.log("Resultado da soma: " + resultado);
 }
 
 //FUNÇÃO ANONIMA  e ARROW FUNCTION
@@ -30,7 +30,7 @@ let imprimirArrowFunction = (mensagem) => {
 };
 
 imprimirFunction("Bem vindo ao JavaScript.");
-imprimirFunctionAnonima("Desenvolvimento WEb");
+imprimirFunctionAnonima("Desenvolvimento WEB");
 imprimirArrowFunction("Desenvolvimento Desktop");
 
 //Comparando tipos de função: regural, anônima e arrow function
@@ -53,11 +53,11 @@ const somar3 = (numeroA, numeroB) => {
 Arrow Function simplificada em uma linha, não precisa de chaves e nem da palavra return*/
 const somar4 = (numeroA, numeroB) => numeroA + numeroB;
 
-console.log(somar1);
-console.log(somar1)(5, 3);
-console.log(somar2);
-console.log(somar2)(5, 3);
-console.log(somar3);
-console.log(somar3)(5, 3);
-console.log(somar4);
-console.log(somar4)(5, 3);
+
+console.log("Resultado soma1: " + somar1(5, 3));
+
+console.log("Resultado soma2: " + somar2(5, 3));
+
+console.log("Resultado soma3: " + somar3(5, 3));
+
+console.log("Resultado soma4: " + somar4(5, 3));

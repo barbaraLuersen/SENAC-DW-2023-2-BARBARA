@@ -18,7 +18,7 @@ console.log("\n------------------------------------------");
 
 let disciplina = "Desenvolvimento Web";
 let conteudo = " com JavaScript";
-console.log(disciplina.concat(conteúdo));
+console.log(disciplina.concat(conteudo));
 console.log("\n------------------------------------------");
 
 let texto = "     Teste de remoção de espaços em branco      ";
@@ -41,7 +41,7 @@ console.log(pedaco);
 console.log(curso);
 console.log("\n------------------------------------------");
 
-let troca = curso.replace("Desnvolvimento", "Criação");
+let troca = curso.replace("Desenvolvimento", "Criação");
 console.log(troca);
 console.log("\n------------------------------------------");
 

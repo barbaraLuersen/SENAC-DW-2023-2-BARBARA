@@ -79,5 +79,5 @@ for (let linha = 0; linha < 3; linha++) {
 }
 
 for (let linha = 0; linha < 3; linha++) {
-  console.log(numeros[linha]);
+  console.log(algorismos[linha]);
 }

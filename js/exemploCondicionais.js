@@ -8,7 +8,7 @@ if (sol === true && vento === false) {
 }
 
 //SWITCH CASE
-let tempo = "sol";
+let tempo = "nublado";
 switch (tempo) {
   case "sol": {
     console.log("Vou a praia!");
@@ -30,6 +30,6 @@ switch (tempo) {
 */
 
 //Aqui antes teria um 'let sol = true'; mas isso já foi declarado mais acima
-let mensagem = sol ? "Voua a praia!" : "Vou ficar em casa!";
+let mensagem = sol ? "Vou a praia!" : "Vou ficar em casa!";
 console.log(mensagem);
 

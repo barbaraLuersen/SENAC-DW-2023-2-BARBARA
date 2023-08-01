@@ -43,24 +43,20 @@ for (let carro of carros) {
 }
 
 console.log("------------------------");
+console.log("CarroA: ")
 for (let propriedade in carroA) {
-  console.log(propriedade);
+  console.log(propriedade + ": " + carroA[propriedade]);
 }
 
 console.log("------------------------");
+console.log("CarroB: ")
 for (let propriedade in carroB) {
-  console.log(
-    "Propriedade: " + propriedade + " - valor: " + carroB[propriedade]
+  console.log(propriedade + ": " + carroB[propriedade]
   );
 }
 
 console.log("------------------------");
 let nomes = ["Fred", "Sheila", "Sara"];
-for (let nome of nomes) {
-  console.log(nome);
-}
-
-console.log("------------------------");
 for (let nome of nomes) {
   console.log(nome);
 }

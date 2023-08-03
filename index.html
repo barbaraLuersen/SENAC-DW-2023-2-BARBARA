@@ -1,0 +1,34 @@
+<!--  -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Configurações, importações, scripts, etc. -->
+    <title>Consulta de Endereços</title>
+    <script src="/js/consultaViaCep"></script>
+  </head>
+  <body>
+    <h1>Consulta de CEP</h1>
+    <div style= "background-color: rgb(66, 122, 185);" id="divDadosEncontrados">
+      <div>
+        <label> Informe o CEP: </label>
+        <input id="txtCep" type="number" onblur="buscarCEP()" />
+      </div>
+      <div>
+        <label>UF: </label>
+        <input type="text" id="txtUF" disabled />
+      </div>
+      <div>
+        <label>Cidade: </label>
+        <input type="text" id="txtCidade" disabled />
+      </div>
+      <div>
+        <label>Bairro: </label>
+        <input type="text" id="txtBairro" disabled />
+      </div>
+      <div>
+        <label>Rua: </label>
+        <input type="text" id="txtRua" disabled />
+      </div>
+    </div>
+  </body>
+</html>

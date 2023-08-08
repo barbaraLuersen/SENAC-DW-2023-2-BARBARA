@@ -65,5 +65,15 @@ function mostrarTelaErro() {
   alert("CEP informado não existe!");
 }
 
-//Chamar a função de consulta
-//buscarCEP(cep);
+function validarCEP(cepFormatado) {
+  var fieldsetCep = document.getElementById("fieldset-consulta-cep");
+  var cepValido = false;
+  if (cepFormatado.length == 8) {
+    fieldsetCep.style = "background-color: purple";
+    cepValido = true;
+  } else {
+    fieldsetCep.style = "background-color: orange";
+  }
+
+  return cepValido;
+}

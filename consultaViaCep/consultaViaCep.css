@@ -1,0 +1,33 @@
+/* Seletor wildcard (vale para todos) */
+* {
+  font-family: "Courier New", Courier, monospace;
+}
+
+body {
+  /* TODO */
+}
+
+/* Seletor por elementos encadeados 
+section+h1{
+    background-color: blue;
+}
+*/
+
+/* Seletor por classe */
+.formulario {
+  background-color: rgb(235, 235, 235);
+}
+
+/* Seletor por id */
+#cep {
+  background-color: rgb(255, 255, 255);
+}
+
+/* Seletor por elemento (tag) */
+h1 {
+  color: rgb(255, 137, 58);
+}
+
+input[type="text"] {
+  background-color: rgb(255, 255, 255);
+}

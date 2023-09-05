@@ -1,52 +1,28 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Produtos</title>
+<html lang="pt-br">
+  <head>
+    <title>Listagem de Produtos</title>
 
-            <script src="produtos.js"></script>
-            <link rel="stylesheet" href="produtos.css"/>
-    </head>
-    <body>
-        <header class="cabeçalho">
-            <h1 class="cabeçalho título">Buscar produto: </h1>
-            <p class="cabeçalho texto">Filtrar por:</p>
-        </header>
-        <main class="principal">
-            <section class="section_menu">
-                <aside class="section_menu_aside">
-                    <p class="section__menu__aside__titulo">
-                        <a href="/index.html">Voltar ao início</a>
-                    </p>
-                </aside>
-            </section>
-
-            <section class="section_principal">
-                <form id="formulario" class="formulario">
-                    <div>
-                        <fieldset id="formulario_fieldset" class="fieldset_consulta_produto">
-                            <legend>Produto</legend>
-                            <div>
-                                <label class="formulario_fieldset" for="nome">Nome:</label>
-                                <input
-                                class="fieldset_cadastro_nome_input_descricao"
-                                type="text"
-                                id="txtNome"
-                                name="nome"
-                                />
-                            </div>
-                            <div>
-                                <button
-                                class="formulario__fieldset__botao"
-                                type="button"
-                                onclick="cadastrarProduto"
-                                >
-                            Cadastrar Produto
-                            </button>
-                            </div>
-                    </div>
-                    </fieldset>
-                </form>
-            </section>
-        </main>
-    </body>
+    <script src="produtos.js"></script>
+    <link rel="stylesheet" href="produtos.css" />
+  </head>
+  <body>
+    <header class="cabecalho">
+      <h1 class="cabecalho titulo">Buscar produto:</h1>
+    </header>
+    <main class="principal">
+      <section class="section_principal">
+        <table>
+          <thread>
+            <th>#</th>
+            <th>Nome</th>
+            <th>Fabricante</th>
+            <th>Valor (R$)</th>
+            <th>Peso (Kg)</th>
+          </thread>
+          <tbody id="corpoTabela"></tbody>
+        </table>
+      </section>
+    </main>
+  </body>
 </html>

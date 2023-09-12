@@ -3,8 +3,7 @@
   <head>
     <title>Listagem de Produtos</title>
 
-    <script src="produtos.js"></script>
-    <link rel="stylesheet" href="produtos.css" />
+    <link rel="stylesheet" href="./produtos.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -21,12 +20,10 @@
       <section class="dropdown">
         <div class="filtros">
           <h2 class="subtitulo">Filtros</h2>
-          <button onclick="esconderFiltro()" class="btn-drop btn">
-            <img src="./img/filter-icon.svg" alt="" />
-          </button>
+          <button onclick="esconderFiltro()" class="btn-drop btn">Filtro</button>
         </div>
 
-        <div id="meuConteudo" class="dropdown-conteudo">
+        <div id="meuConteudo" name="meuConteudo" class="dropdown-conteudo">
           <form class="form" id="form-filtro">
             <div class="form-item">
               <label for="produto">Filtrar por nome do produto</label>
@@ -121,7 +118,7 @@
             <button
               id="btn-filtro"
               class="btn"
-              onclick="buscarProdutosSeletor(), esconderFiltro()"
+              onclick="buscarProdutoSeletor(), esconderFiltro()"
               type="button"
             >
               Filtrar
@@ -142,6 +139,6 @@
         </section>
       </section>
     </main>
-    <script src="./js/produtos.js"></script>
+    <script src="./produtos.js"></script>
   </body>
 </html>

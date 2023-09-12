@@ -7,26 +7,26 @@ function preencherTabela(jsonProdutos) {
     let novaLinha = dadosTabelaProdutos.insertRow();
 
     let celulaId = novaLinha.insertCell();
-    celulaId.innerText = jsonProdutos[i].id;
+    celulaId.innerText = item.id;
 
     let celulaNome = novaLinha.insertCell();
-    celulaNome.innerText = jsonProdutos[i].nome;
+    celulaNome.innerText = item.nome;
 
     let celulaFabricante = novaLinha.insertCell();
-    celulaFabricante.innerText = jsonProdutos[i].fabricanteDoProduto.nome;
+    celulaFabricante.innerText = item.fabricanteDoProduto.nome;
 
     let celulaValor = novaLinha.insertCell();
-    celulaValor.innerText = jsonProdutos[i].valor;
+    celulaValor.innerText = item.valor;
 
     let celulaPeso = novaLinha.insertCell();
-    celulaPeso.innerText = jsonProdutos[i].peso;
+    celulaPeso.innerText = item.peso;
   });
 }
 
 window.addEventListener("DOMContentLoaded", buscarProdutoSeletor());
 
 async function buscarProdutoSeletor() {
-  fetch("http://localhost:8080/api/filtros", {
+  fetch("http://localhost:8080/api/produtos/filtro", {
     method: "POST",
     body: JSON.stringify({
       nome: document.getElementById("input-produto").value,
@@ -55,13 +55,15 @@ function esconderFiltro() {
 }
 
 window.onclick = (event) => {
-  if (!event.target.matches(".btn-drop")) {
-    var dropdown = document.getElementsByClassName("dropdown-conteudo");
-    dropdowns.forEach((item) => {
-      var openDropdown = dropdown[item];
-      if (openDropdown.classList.contains("show")) {
-        openDropdown.classList.remove("show");
-      }
-    });
+  if(!event.target.matches('.btn-drop')) {
+    var dropdowns = document.getElementsByClassName('dropdown-conteudo');
+   
+
+    for(let i; i < dropdowns.length; i++){
+      var openDropdown = dropdowns[item];
+      if(openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      };
+    }
   }
-};
+}

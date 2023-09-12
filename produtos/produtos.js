@@ -1,8 +1,10 @@
 function preencherTabela(jsonProdutos) {
+  //var = variavel
   var dadosTabelaProdutos = document.getElementById("corpoTabela");
 
   dadosTabelaProdutos.innerHTML = "";
 
+  //forEach = para cada
   jsonProdutos.forEach((item) => {
     let novaLinha = dadosTabelaProdutos.insertRow();
 
@@ -50,14 +52,9 @@ async function buscarProdutoSeletor() {
     });
 }
 
-function esconderFiltro() {
-  document.getElementById("meuConteudo").classList.toggle("show");
-}
-
 window.onclick = (event) => {
   if(!event.target.matches('.btn-drop')) {
     var dropdowns = document.getElementsByClassName('dropdown-conteudo');
-   
 
     for(let i; i < dropdowns.length; i++){
       var openDropdown = dropdowns[item];

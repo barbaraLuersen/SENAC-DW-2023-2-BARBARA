@@ -17,126 +17,115 @@
       <h1 class="cabecalho titulo">Buscar produto:</h1>
     </header>
     <main class="principal">
-      <section class="dropdown">
-        <div class="filtros">
-          <h2 class="subtitulo">Filtros</h2>
-          <button onclick="esconderFiltro()" class="btn-drop btn">Filtro</button>
-        </div>
+      <div class="filtros">
+        <h2 class="subtitulo">Filtros</h2>
+        <form class="form" id="form-filtro">
+          <div class="form-item">
+            <label for="produto">Filtrar por nome do produto</label>
+            <input
+              type="text"
+              name="produto"
+              id="input-produto"
+              placeholder="Produto"
+            />
+          </div>
 
-        <div id="meuConteudo" name="meuConteudo" class="dropdown-conteudo">
-          <form class="form" id="form-filtro">
-            <div class="form-item">
-              <label for="produto">Filtrar por nome do produto</label>
-              <input
-                type="text"
-                name="produto"
-                id="input-produto"
-                placeholder="Produto"
-              />
-            </div>
+          <div class="form-item">
+            <label for="fabricante">Filtrar por nome do fabricante</label>
+            <input
+              type="text"
+              name="fabricante"
+              id="input-fabricante"
+              placeholder="Fabricante"
+            />
+          </div>
 
-            <div class="form-item">
-              <label for="fabricante">Filtrar por nome do fabricante</label>
-              <input
-                type="text"
-                name="fabricante"
-                id="input-fabricante"
-                placeholder="Fabricante"
-              />
-            </div>
+          <div class="form-item">
+            <label for="cnpj">Filtrar por CNPJ do fabricante</label>
+            <input type="text" name="cnpj" id="input-cnpj" placeholder="CNPJ" />
+          </div>
 
-            <div class="form-item">
-              <label for="cnpj">Filtrar por CNPJ do fabricante</label>
-              <input
-                type="text"
-                name="cnpj"
-                id="input-cnpj"
-                placeholder="CNPJ"
-              />
-            </div>
+          <div class="form-item">
+            <label for="valor-min">Filtrar por Valor(min) R$</label>
+            <input
+              type="number"
+              name="valor-min"
+              id="input-valor-min"
+              placeholder="R$0.00"
+            />
+          </div>
 
-            <div class="form-item">
-              <label for="valor-min">Filtrar por Valor(min) R$</label>
-              <input
-                type="number"
-                name="valor-min"
-                id="input-valor-min"
-                placeholder="R$0.00"
-              />
-            </div>
+          <div class="form-item">
+            <label for="valor-max">Filtrar por Valor(max) R$</label>
+            <input
+              type="number"
+              name="valor-max"
+              id="input-valor-max"
+              placeholder="R$0.00"
+            />
+          </div>
 
-            <div class="form-item">
-              <label for="valor-max">Filtrar por Valor(max) R$</label>
-              <input
-                type="number"
-                name="valor-max"
-                id="input-valor-max"
-                placeholder="R$0.00"
-              />
-            </div>
+          <div class="form-item">
+            <label for="peso-min">Filtrar por Peso(min)</label>
+            <input
+              type="number"
+              name="peso-min"
+              id="input-peso-min"
+              placeholder="0.0Kg"
+            />
+          </div>
 
-            <div class="form-item">
-              <label for="peso-min">Filtrar por Peso(min)</label>
-              <input
-                type="number"
-                name="peso-min"
-                id="input-peso-min"
-                placeholder="0.0Kg"
-              />
-            </div>
+          <div class="form-item">
+            <label for="peso-max">Filtrar por Peso(máx)</label>
+            <input
+              type="number"
+              name="peso-max"
+              id="input-peso-max"
+              placeholder="0.0Kg"
+            />
+          </div>
 
-            <div class="form-item">
-              <label for="peso-max">Filtrar por Peso(máx)</label>
-              <input
-                type="number"
-                name="peso-max"
-                id="input-peso-max"
-                placeholder="0.0Kg"
-              />
-            </div>
+          <div class="form-item">
+            <label for="data-inicio">Data de cadastro de: </label>
+            <input
+              type="date"
+              name="data-inicio"
+              id="input-data-inicio"
+              placeholder="dd/mm/aaaa"
+            />
+          </div>
 
-            <div class="form-item">
-              <label for="data-inicio">Data de cadastro de: </label>
-              <input
-                type="date"
-                name="data-inicio"
-                id="input-data-inicio"
-                placeholder="dd/mm/aaaa"
-              />
-            </div>
+          <div class="form-item">
+            <label for="data-fim">Data de cadastro até: </label>
+            <input
+              type="date"
+              name="data-fim"
+              id="input-data-fim"
+              placeholder="dd/mm/aaaa"
+            />
+          </div>
 
-            <div class="form-item">
-              <label for="data-fim">Data de cadastro até: </label>
-              <input
-                type="date"
-                name="data-fim"
-                id="input-data-fim"
-                placeholder="dd/mm/aaaa"
-              />
-            </div>
-
-            <button
-              id="btn-filtro"
-              class="btn"
-              onclick="buscarProdutoSeletor(), esconderFiltro()"
-              type="button"
-            >
-              Filtrar
-            </button>
-          </form>
-        </div>
-        <section class="tabela">
-          <table>
-            <thread>
-              <th>#</th>
-              <th>Nome</th>
-              <th>Fabricante</th>
-              <th>Valor</th>
-              <th>Peso</th>
-            </thread>
-            <tbody id="corpoTabela"></tbody>
-          </table>
-        </section>
+          <button
+            id="btn-filtro"
+            class="btn"
+            onclick="buscarProdutoSeletor()"
+            type="button"
+          >
+            Filtrar
+          </button>
+        </form>
+      </div>
+      <section class="tabela">
+        <table>
+          <thread>
+            <th>#</th>
+            <th>Nome</th>
+            <th>Fabricante</th>
+            <th>Valor</th>
+            <th>Peso</th>
+          </thread>
+          <tbody id="corpoTabela"></tbody>
+        </table>
       </section>
     </main>
     <script src="./produtos.js"></script>

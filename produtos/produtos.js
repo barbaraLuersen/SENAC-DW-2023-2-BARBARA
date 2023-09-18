@@ -43,17 +43,13 @@ async function listarTodos() {
 }
 
 async function consultarPorId() {
-  fetch(
-    "http://localhost:8080/api/produtos/{" +
-      document.getElementById("input-ID").value +
-      "}",
-    {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json; charset=UTF-8",
-      },
-    }
-  )
+  let id = document.getElementById("input-ID").value;
+  fetch("http://localhost:8080/api/produtos/{" + id + "}", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json; charset=UTF-8",
+    },
+  })
     .then((resultado) => resultado.json())
     .then((json) => {
       console.log(json);
@@ -69,33 +65,33 @@ async function salvar() {
       nome: document.getElementById("input-produto").value,
       fabricante: document.getElementById("input-fabricante").value,
       cnpjFabricante: document.getElementById("input-cnpj").value,
-      valorMinimo: document.getElementById("input-valor").value,
-      PesoMinimo: document.getElementById("input-peso").value,
-      dataCadastroInicial: document.getElementById("input-data").value,
+      valor: document.getElementById("input-valor").value,
+      peso: document.getElementById("input-peso").value,
+      dataCadastro: document.getElementById("input-data").value,
     }),
     headers: {
       "Content-Type": "application/json; charset=UTF-8",
     },
   })
     .then((resultado) => resultado.json())
-    .then((json) => {
-      console.log(json);
-    });
+    .then((json) => console.log(json))
+    .catch((err) => console.log("Erro de solicitação", err));
 }
 
 async function buscarProdutoSeletor() {
   fetch("http://localhost:8080/api/produtos/filtro", {
     method: "POST",
     body: JSON.stringify({
-      nome: document.getElementById("input-produto").value,
-      fabricante: document.getElementById("input-fabricante").value,
-      cnpjFabricante: document.getElementById("input-cnpj").value,
-      valorMinimo: document.getElementById("input-valor-min").value,
-      valorMaximo: document.getElementById("input-valor-max").value,
-      PesoMinimo: document.getElementById("input-peso-min").value,
-      pesoMaximo: document.getElementById("input-peso-max").value,
-      dataCadastroInicial: document.getElementById("input-data-inicio").value,
-      dataCadastroFinal: document.getElementById("input-data-fim").value,
+      nome: document.getElementById("input-produto-filtro").value,
+      fabricante: document.getElementById("input-fabricante-filtro").value,
+      cnpjFabricante: document.getElementById("input-cnpj-filtro").value,
+      valorMinimo: document.getElementById("input-valor-min-filtro").value,
+      valorMaximo: document.getElementById("input-valor-max-filtro").value,
+      PesoMinimo: document.getElementById("input-peso-min-filtro").value,
+      pesoMaximo: document.getElementById("input-peso-max-filtro").value,
+      dataCadastroInicial: document.getElementById("input-data-inicio-filtro")
+        .value,
+      dataCadastroFinal: document.getElementById("input-data-fim-filtro").value,
     }),
     headers: {
       "Content-Type": "application/json; charset=UTF-8",
@@ -116,48 +112,29 @@ async function atualizar() {
       nome: document.getElementById("input-produto").value,
       fabricante: document.getElementById("input-fabricante").value,
       cnpjFabricante: document.getElementById("input-cnpj").value,
-      valorMinimo: document.getElementById("input-valor").value,
-      PesoMinimo: document.getElementById("input-peso").value,
-      dataCadastroInicial: document.getElementById("input-data").value,
+      valor: document.getElementById("input-valor").value,
+      peso: document.getElementById("input-peso").value,
+      dataCadastro: document.getElementById("input-data").value,
     }),
     headers: {
       "Content-Type": "application/json; charset=UTF-8",
     },
   })
     .then((resultado) => resultado.json())
-    .then((json) => {
-      console.log(json);
-    });
+    .then((json) => console.log(json))
+    .catch((err) => console.log("Erro de solicitação", err));
 }
 
 //MÉTODO DELETE
 async function excluir() {
-  fetch(
-    "http://localhost:8080/api/produtos/filtro/{" +
-      document.getElementById("input-ID").value +
-      "}",
-    {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json; charset=UTF-8",
-      },
-    }
-  )
+  let id = document.getElementById("input-ID").value;
+  fetch("http://localhost:8080/api/produtos/filtro/{" + id + "}", {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json; charset=UTF-8",
+    },
+  })
     .then((resultado) => resultado.json())
-    .then((json) => {
-      console.log(json);
-    });
+    .then((json) => console.log(json))
+    .catch((err) => console.log("Erro de solicitação", err));
 }
-
-window.onclick = (event) => {
-  if (!event.target.matches(".btn-drop")) {
-    var dropdowns = document.getElementsByClassName("dropdown-conteudo");
-
-    for (let i; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[item];
-      if (openDropdown.classList.contains("show")) {
-        openDropdown.classList.remove("show");
-      }
-    }
-  }
-};

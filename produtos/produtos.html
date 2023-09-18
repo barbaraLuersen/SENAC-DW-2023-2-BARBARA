@@ -14,12 +14,17 @@
 
   <body>
     <header class="cabecalho">
-      <h1 class="cabecalho titulo">Buscar produto:</h1>
+      <h1 class="cabecalho titulo">Produtos:</h1>
     </header>
     <main class="principal">
       <div class="filtros">
-        <h2 class="subtitulo">Filtros</h2>
+        <h2 class="subtitulo">Filtrar lista de produtos</h2>
         <form class="form" id="form-filtro">
+          <div class="form-item">
+            <label for="id">ID do produto</label>
+            <input type="text" name="ID" id="input-id" placeholder="ID" />
+          </div>
+
           <div class="form-item">
             <label for="produto">Filtrar por nome do produto</label>
             <input
@@ -115,10 +120,12 @@
           </button>
         </form>
       </div>
+
       <section class="tabela">
         <table>
           <thread>
             <th>#</th>
+            <th>ID</th>
             <th>Nome</th>
             <th>Fabricante</th>
             <th>Valor</th>
@@ -127,6 +134,99 @@
           <tbody id="corpoTabela"></tbody>
         </table>
       </section>
+
+      <div class="salvar">
+        <h2 class="subtitulo">Adicionar ou Atualizar produto</h2>
+        <form class="form" id="form-salvar">
+
+          <div class="form-item">
+            <label for="id">ID do produto</label>
+            <input type="text" name="ID" id="input-id" placeholder="ID" />
+          </div>
+
+          <div class="form-item">
+            <label for="produto">Nome do produto</label>
+            <input
+              type="text"
+              name="produto"
+              id="input-produto"
+              placeholder="Produto"
+            />
+          </div>
+
+          <div class="form-item">
+            <label for="fabricante">Nome do fabricante</label>
+            <input
+              type="text"
+              name="fabricante"
+              id="input-fabricante"
+              placeholder="Fabricante"
+            />
+          </div>
+
+          <div class="form-item">
+            <label for="cnpj">CNPJ do fabricante</label>
+            <input type="text" name="cnpj" id="input-cnpj" placeholder="CNPJ" />
+          </div>
+
+
+      <div class="form-item">
+        <label for="valor">Valor R$</label>
+        <input
+          type="number"
+          name="valor"
+          id="input-valor"
+          placeholder="R$0.00"
+        />
+      </div>
+
+      <div class="form-item">
+        <label for="peso">Peso</label>
+        <input
+          type="number"
+          name="peso"
+          id="input-peso"
+          placeholder="0.0Kg"
+        />
+      </div>
+
+      <div class="form-item">
+        <label for="data">Data de cadastro: </label>
+        <input
+          type="date"
+          name="data"
+          id="input-data"
+          placeholder="dd/mm/aaaa"
+        />
+      </div>
+
+      <button
+      id="btn-salvar"
+      class="btn"
+      onclick="salvar()"
+      type="button"
+    >
+      Salvar
+    </button>
+
+    <button
+    id="btn-atualizar"
+    class="btn"
+    onclick="atualizar()"
+    type="button"
+  >
+    Atualizar
+  </button>
+
+  <button
+    id="btn-excluir"
+    class="btn"
+    onclick="excluir()"
+    type="button"
+  >
+  Excluir
+  </button>
+
     </main>
     <script src="./produtos.js"></script>
   </body>

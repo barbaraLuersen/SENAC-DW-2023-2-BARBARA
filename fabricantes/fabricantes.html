@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Fabricantes</title>
+    <link rel="stylesheet" href="./fabricantes.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&family=Merriweather:ital,wght@1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header class="cabecalho">
+      <h1 class="cabecalho titulo">Fabricantes:</h1>
+    </header>
+    <main class="principal">
+      <div class="cadastrar">
+        <h2 class="subtitulo">Cadastrar fabricantes:</h2>
+        <form class="form" id="form-cadastro">
+          <div class="form-item">
+            <label for="nome">Nome:</label>
+            <input
+              type="text"
+              name="nome"
+              id="input-nome-fabricante"
+              placeholder="nome fabricante"
+            />
+          </div>
+
+          <div class="form-item">
+            <label for="cnpj">CNPJ:</label>
+            <input
+              type="text"
+              name="cnpj"
+              id="input-cnpj-fabricante"
+              placeholder="CNPJ"
+            />
+          </div>
+
+          <div class="form-item">
+            <label for="cep">CEP:</label>
+            <input
+              type="text"
+              name="cep"
+              id="input-cep-fabricante"
+              placeholder="CEP"
+            />
+          </div>
+
+          <button
+            id="btn-buscar-cep"
+            class="btn"
+            type="button"
+            onclick="buscarCEP()"
+          >
+            Buscar CEP
+          </button>
+
+          <div class="form-item">
+            <label for="cidade">Cidade:</label>
+            <input
+              type="text"
+              name="cidade"
+              id="input-cidade-fabricante"
+              placeholder="cidade"
+            />
+          </div>
+
+          <div class="form-item">
+            <label for="uf">UF:</label>
+            <input
+              type="text"
+              name="uf"
+              id="input-uf-fabricante"
+              placeholder="UF"
+            />
+          </div>
+
+          <button id="btn-salvar" class="btn" onclick="salvar()" type="button">
+            SALVAR
+          </button>
+        </form>
+      </div>
+
+      <div class="filtros">
+        <h2 class="subtitulo">Filtrar fabricantes:</h2>
+        <form class="form" id="form-filtro">
+          <div class="form-item">
+            <label for="nomeFiltro">Filtrar por nome:</label>
+            <input
+              type="text"
+              name="nome"
+              id="input-nome-fabricante-filtro"
+              placeholder="nome fabricante"
+            />
+          </div>
+
+          <div class="form-item">
+            <label for="cnpjFiltro">Filtrar por CNPJ:</label>
+            <input
+              type="text"
+              name="cnpj"
+              id="input-cnpj-fabricante-filtro"
+              placeholder="CNPJ"
+            />
+          </div>
+
+          <div class="form-item">
+            <label for="cepFiltro">Filtrar por CEP:</label>
+            <input
+              type="text"
+              name="cep"
+              id="input-cep-fabricante-filtro"
+              placeholder="CEP"
+            />
+          </div>
+
+          <div class="form-item">
+            <label for="cidadeFiltro">Filtrar por cidade:</label>
+            <input
+              type="text"
+              name="cidade"
+              id="input-cidade-fabricante-filtro"
+              placeholder="cidade"
+            />
+          </div>
+
+          <div class="form-item">
+            <label for="ufFiltro">Filtrar por UF:</label>
+            <input
+              type="text"
+              name="uf"
+              id="input-uf-fabricante-filtro"
+              placeholder="UF"
+            />
+          </div>
+
+          <button
+            id="btn-filtrar"
+            class="btn"
+            onclick="buscarProdutoSeletor()"
+            type="button"
+          >
+            FILTRAR
+          </button>
+
+          <button id="btn-limpar" class="btn" onclick="limpar()" type="button">
+            LIMPAR
+          </button>
+
+          <section class="tabela">
+            <table>
+              <thread>
+                <th>#</th>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>CNPJ</th>
+                <th>CEP</th>
+                <th>Cidade</th>
+                <th>UF</th>
+              </thread>
+              <tbody id="corpoTabela"></tbody>
+            </table>
+          </section>
+        </form>
+      </div>
+    </main>
+    <script src="./fabricantes.js"></script>
+  </body>
+</html>

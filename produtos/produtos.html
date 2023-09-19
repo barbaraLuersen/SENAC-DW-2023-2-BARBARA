@@ -20,7 +20,6 @@
       <div class="filtros">
         <h2 class="subtitulo">Filtrar lista de produtos</h2>
         <form class="form" id="form-filtro">
-
           <div class="form-item">
             <label for="produto">Filtrar por nome do produto</label>
             <input
@@ -43,7 +42,12 @@
 
           <div class="form-item">
             <label for="cnpj">Filtrar por CNPJ do fabricante</label>
-            <input type="text" name="cnpj" id="input-cnpj-filtro" placeholder="CNPJ" />
+            <input
+              type="text"
+              name="cnpj"
+              id="input-cnpj-filtro"
+              placeholder="CNPJ"
+            />
           </div>
 
           <div class="form-item">
@@ -134,7 +138,6 @@
       <div class="salvar">
         <h2 class="subtitulo">Adicionar ou Atualizar produto</h2>
         <form class="form" id="form-salvar">
-
           <div class="form-item">
             <label for="produto">Nome do produto</label>
             <input
@@ -160,64 +163,59 @@
             <input type="text" name="cnpj" id="input-cnpj" placeholder="CNPJ" />
           </div>
 
+          <div class="form-item">
+            <label for="valor">Valor R$</label>
+            <input
+              type="number"
+              name="valor"
+              id="input-valor"
+              placeholder="R$0.00"
+            />
+          </div>
 
-      <div class="form-item">
-        <label for="valor">Valor R$</label>
-        <input
-          type="number"
-          name="valor"
-          id="input-valor"
-          placeholder="R$0.00"
-        />
+          <div class="form-item">
+            <label for="peso">Peso</label>
+            <input
+              type="number"
+              name="peso"
+              id="input-peso"
+              placeholder="0.0Kg"
+            />
+          </div>
+
+          <div class="form-item">
+            <label for="data">Data de cadastro: </label>
+            <input
+              type="date"
+              name="data"
+              id="input-data"
+              placeholder="dd/mm/aaaa"
+            />
+          </div>
+
+          <button id="btn-salvar" class="btn" onclick="salvar()" type="button">
+            Salvar
+          </button>
+
+          <button
+            id="btn-atualizar"
+            class="btn"
+            onclick="atualizar()"
+            type="button"
+          >
+            Atualizar
+          </button>
+
+          <button
+            id="btn-excluir"
+            class="btn"
+            onclick="excluir()"
+            type="button"
+          >
+            Excluir
+          </button>
+        </form>
       </div>
-
-      <div class="form-item">
-        <label for="peso">Peso</label>
-        <input
-          type="number"
-          name="peso"
-          id="input-peso"
-          placeholder="0.0Kg"
-        />
-      </div>
-
-      <div class="form-item">
-        <label for="data">Data de cadastro: </label>
-        <input
-          type="date"
-          name="data"
-          id="input-data"
-          placeholder="dd/mm/aaaa"
-        />
-      </div>
-
-      <button
-      id="btn-salvar"
-      class="btn"
-      onclick="salvar()"
-      type="button"
-    >
-      Salvar
-    </button>
-
-    <button
-    id="btn-atualizar"
-    class="btn"
-    onclick="atualizar()"
-    type="button"
-  >
-    Atualizar
-  </button>
-
-  <button
-    id="btn-excluir"
-    class="btn"
-    onclick="excluir()"
-    type="button"
-  >
-  Excluir
-  </button>
-
     </main>
     <script src="./produtos.js"></script>
   </body>

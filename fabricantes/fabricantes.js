@@ -52,12 +52,14 @@ function limpar() {
   document.getElementById("input-cep-fabricante").value = "";
   document.getElementById("input-cidade-fabricante").value = "";
   document.getElementById("input-uf-fabricante").value = "";
+}
 
-  //   document.getElementById("input-nome-fabricante").disabled = true;
-  //   document.getElementById("input-cnpj-fabricante").disabled = true;
-  //   document.getElementById("input-cep-fabricante").disabled = true;
-  //   document.getElementById("input-cidade-fabricante").disabled = true;
-  //   document.getElementById("input-uf-fabricante").disabled = true;
+function limparFiltros() {
+  document.getElementById("input-nome-fabricante-filtro").value = "";
+  document.getElementById("input-cnpj-fabricante-filtro").value = "";
+  document.getElementById("input-cep-fabricante-filtro").value = "";
+  document.getElementById("input-cidade-fabricante-filtro").value = "";
+  document.getElementById("input-uf-fabricante-filtro").value = "";
 }
 
 function preencherCamposComJSON(json) {
@@ -68,6 +70,27 @@ function preencherCamposComJSON(json) {
 function mostrarTelaErro() {
   limpar();
   alert("CEP informado não existe!");
+}
+
+function validarCampos() {
+  let mensagem = "";
+  if (document.getElementById("input-nome-fabricante").value == "") {
+    mensagem += "- Nome inválido";
+  }
+  if (document.getElementById("input-cnpj-fabricante").value == "") {
+    mensagem += "- CNPJ inválido";
+  }
+  if (document.getElementById("input-cep-fabricante").value == "") {
+    mensagem += "- CEP inválido";
+  }
+  if (document.getElementById("input-cidade-fabricante").value == "") {
+    mensagem += "- Cidade inválida";
+  }
+  if (document.getElementById("input-uf-fabricante").value == "") {
+    mensagem += "- UF inválida";
+  }
+
+  return mensagem;
 }
 
 function validarCEP(cepFormatado) {
@@ -87,21 +110,29 @@ window.addEventListener("DOMContentLoaded", buscarProdutoSeletor());
 
 //MÉTODOS POST
 async function salvar() {
-  fetch("http://localhost:8080/api/fabricantes", {
-    method: "POST",
-    body: JSON.stringify({
-      nome: document.getElementById("input-nome-fabricante").value,
-      cnpj: document.getElementById("input-cnpj-fabricante").value,
-      cep: document.getElementById("input-cep-fabricante").value,
-      cidade: document.getElementById("input-cidade-fabricante").value,
-      uf: document.getElementById("input-uf-fabricante").value,
-    }),
-    headers: {
-      "Content-Type": "application/json; charset=UTF-8",
-    },
-  })
-    .then((resultado) => resultado.json())
-    .then((json) => console.log(json));
+  let mensagemValidacao = validarCampos();
+
+  if (mensagemValidacao != "") {
+    alert(mensagemValidacao);
+  } else {
+    fetch("http://localhost:8080/api/fabricantes", {
+      method: "POST",
+      body: JSON.stringify({
+        nome: document.getElementById("input-nome-fabricante").value,
+        cnpj: document.getElementById("input-cnpj-fabricante").value,
+        cep: document.getElementById("input-cep-fabricante").value,
+        cidade: document.getElementById("input-cidade-fabricante").value,
+        uf: document.getElementById("input-uf-fabricante").value,
+      }),
+      headers: {
+        "Content-Type": "application/json; charset=UTF-8",
+      },
+    })
+      .then((resultado) => resultado.json())
+      .then((json) => {
+        alert("Salvou!");
+      });
+  }
 }
 
 async function buscarProdutoSeletor() {

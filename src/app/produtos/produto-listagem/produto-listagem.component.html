@@ -8,14 +8,30 @@
         <div class="card-body card-info">
           <form>
             <div class="form-group">
-              <label for="nome">Nome</label>
-            <!--
-              // <input class="form-control" name="nomeFabricante" [(ngModel)]="seletor.nomeFabricante"
+              <label for="nomeFabricante">Nome</label>
+              <input
+                class="form-control"
+                name="nomeFabricante"
+                [(ngModel)]="seletor.nomeFabricante"
+              />
             </div>
-            </form>
 
-            -->
-
+            <br />
+            <div class="form-group">
+              <button
+                type="submit"
+                class="form-control btn btn-primary"
+                ngClick="pesquisar()"
+              >
+                Pesquisar
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br />
   <div class="row">
     <div class="col-sm-12">
       <div class="card">
@@ -37,10 +53,12 @@
                   <td>{{ p.id }}</td>
                   <td>{{ p.nome }}</td>
                   <td>
-                    <button type="submit"
-                            title="Editar"
-                            class="btn btn-xs btn-info"
-                            (click)="editar(p.id)">
+                    <button
+                      type="submit"
+                      title="Editar"
+                      class="btn btn-xs btn-info"
+                      (click)="editar(p.id)"
+                    >
                       Editar
                     </button>
                   </td>

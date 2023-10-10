@@ -14,7 +14,7 @@ export class ProdutosService {
   //Declarar os métodos da API REST
   listarTodos(): Observable<Array<Produto>> {
     //com retorno EXPLICITO(Observable<Array<Produto>>)
-    return this.httpClient.get<Array<Produto>>(this.API);
+    return this.httpClient.get<Array<Produto>>(this.API + '/todos');
   }
 
   listarComSeletor(seletor: ProdutoSeletor) {

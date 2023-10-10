@@ -30,5 +30,17 @@ export class ProdutoListagemComponent implements OnInit {
     );
   }
 
-  editar(id: number) {}
+  editar(id: number) {
+  }
+
+  pesquisar(){
+    this.produtosService.listarComSeletor(this.seletor).subscribe(
+      (resultado) => {
+        this.produtos = resultado;
+      },
+      (erro) => {
+        console.log('Erro ao buscar produtos', erro);
+      }
+    );
+  }
 }

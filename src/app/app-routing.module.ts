@@ -7,7 +7,7 @@ import { RouterModule, Routes } from '@angular/router';
 //ela deve colocar 'produtos/lista' (ou qualquer tela que seja a inicial, como menu) e depois ir para a o pacote
 //'produtos.module', de onde ele pega uma outra route e segue o caminho
 const routes: Routes = [
-  { path: '', redirectTo: 'produtos/lista', pathMatch: 'full' },
+  //{ path: '', redirectTo: 'produtos/lista', pathMatch: 'full' },
   {
     path: 'produtos',
     loadChildren: () =>

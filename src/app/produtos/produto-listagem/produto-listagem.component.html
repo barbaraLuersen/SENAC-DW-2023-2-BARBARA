@@ -12,6 +12,12 @@
               <input
                 class="form-control"
                 name="nome"
+                [(ngModel)]="seletor.nome"
+              />
+              <label for="nomeFabricante">Fabricante</label>
+              <input
+                class="form-control"
+                name="nomeFabricante"
                 [(ngModel)]="seletor.nomeFabricante"
               />
             </div>
@@ -21,7 +27,7 @@
               <button
                 type="submit"
                 class="form-control btn btn-primary"
-                ngClick="pesquisar()"
+                (click)="pesquisar()"
               >
                 Pesquisar
               </button>
@@ -45,6 +51,7 @@
                 <tr>
                   <th scope="col">Id</th>
                   <th scope="col">Nome</th>
+                  <th scope="col">Fabricante</th>
                   <th>Ações</th>
                 </tr>
               </thead>
@@ -52,6 +59,7 @@
                 <tr *ngFor="let p of produtos">
                   <td>{{ p.id }}</td>
                   <td>{{ p.nome }}</td>
+                  <td>{{ p.fabricanteDoProduto.nome }}</td>
                   <td>
                     <button
                       type="submit"

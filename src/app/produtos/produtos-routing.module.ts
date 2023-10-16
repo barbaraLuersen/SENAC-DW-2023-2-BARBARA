@@ -2,6 +2,7 @@ import { ProdutosModule } from './produtos.module';
 import { ProdutoListagemComponent } from './produto-listagem/produto-listagem.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ProdutoDetalheComponent } from './produto-detalhe/produto-detalhe.component';
 
 //routes cria uma rota para saber para qual página você é redirecionado dependendo da url.
 //Tipo a url que tinhamos no controller no backend em java.
@@ -9,7 +10,7 @@ import { RouterModule, Routes } from '@angular/router';
 //é o redirecinamento para o pacote ProdutoListagem
 const routes: Routes = [
   { path: 'lista', component: ProdutoListagemComponent },
-  //{path: ':id', component:ProdutoDetalheComponent}
+  { path: ':detalhe', component: ProdutoDetalheComponent },
 ];
 
 @NgModule({

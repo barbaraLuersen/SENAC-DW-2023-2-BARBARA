@@ -8,6 +8,12 @@ import { ProdutoDetalheComponent } from './produto-detalhe/produto-detalhe.compo
 
 @NgModule({
   declarations: [ProdutoListagemComponent, ProdutoDetalheComponent],
-  imports: [CommonModule, FormsModule, ProdutosRoutingModule],
+  imports: [
+    CommonModule,
+    //Importa o módulo de formulários do Angular  (para funcionar o ngModel)
+    //https://angular.io/api/forms/NgModel
+    FormsModule,
+    ProdutosRoutingModule,
+  ],
 })
 export class ProdutosModule {}

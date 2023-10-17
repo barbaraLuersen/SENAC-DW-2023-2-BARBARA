@@ -1,4 +1,4 @@
-<!-- <div class="container-fluid">
+<div class="container-fluid">
   <form>
     <div class="row">
       <div class="form-group clo-md-6">
@@ -6,7 +6,6 @@
         <input class="form-control" name="nome" [(ngModel)]="produto.nome" />
       </div>
       <div class="form-group col-md-6">
-      
         <label for="nomeFabricante">Fabricante</label>
         <select
           class="form-select"
@@ -29,19 +28,45 @@
           class="form-control"
           type="number"
           name="peso"
-          [(ngModel)]="produto.peso">
+          [(ngModel)]="produto.peso"
+        />
       </div>
       <div class="form-group col-md-6">
         <label for="valor">Valor</label>
-      <div class="input-group mb-2">
-        <div class="input-group-prepend">
-          <div class="input-group-text">R$</div>
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text">R$</div>
+          </div>
+          <input
+            type="number"
+            class="form-control"
+            name="valor"
+            placeholder="Valor de venda do produto"
+            [(ngModel)]="produto.valor"
+          />
         </div>
-        <input type="number" class="form-control" name="valor"
-        placeholder="Valor de venda do produto"
-        [(ngModel)]="produto.valor">
       </div>
     </div>
-  </div>
+
+    <div class="row">
+      <div class="form-group col-md-6">
+        <button
+          type="submit"
+          class="form-control btn btn-primary"
+          (click)="salvar()"
+        >
+          Salvar
+        </button>
+      </div>
+      <div class="form-group col-md-6">
+        <button
+          type="submit"
+          class="form-control btn btn-warning"
+          (click)="voltar()"
+        >
+          Voltar
+        </button>
+      </div>
+    </div>
   </form>
-</div> -->
+</div>

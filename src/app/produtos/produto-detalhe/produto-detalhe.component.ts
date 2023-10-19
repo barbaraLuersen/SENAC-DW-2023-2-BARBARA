@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Fabricante } from 'src/app/shared/model/fabricante';
 import { Produto } from 'src/app/shared/model/produto';
@@ -18,6 +19,15 @@ export class ProdutoDetalheComponent implements OnInit {
   public idProduto: number;
   public produto: Produto = new Produto();
   public fabricantes: Fabricante[] = [];
+  public dataMinima: string;
+  public dataMaxima: string;
+
+  //'ViewChild' fornece acesso a elementos filho no DOM de exibição configurando
+  //consultas de exibição. Uma consulta de exibição é uma referência solicitada
+  //a um elemento filho dentro de uma exibição de componente que contém metadados
+  //do elemento.
+  @ViewChild('ngForm')
+  public ngForm: NgForm;
 
   constructor(
     private produtoService: ProdutosService,
@@ -30,6 +40,9 @@ export class ProdutoDetalheComponent implements OnInit {
   //É um local para colocar o código que precisamos executar logo que
   //a classe é instanciada.
   ngOnInit(): void {
+    this.dataMinima = '2023-10-02';
+    this.dataMaxima = '2023-10-30';
+
     this.route.params.subscribe((params) => {
       this.idProduto = params['id']; //'id' é o nome do parâmetro definido na rota (na classe: produtos-routing-module.ts)
 
@@ -65,9 +78,14 @@ export class ProdutoDetalheComponent implements OnInit {
     );
   }
 
-  salvar() {
+  salvar(form: NgForm) {
+    if (form.invalid) {
+      Swal.fire('Atenção', 'Revise, por gentileza', 'warning');
+      return;
+    }
     //Se chama o método 'salvar()' e tem um 'id' na URL então vai para a
     //página de edição (que é a página de cadastro, mas com alguns campos já preenchidos)
+    //para EDITAR
     if (this.idProduto) {
       this.produtoService.atualizar(this.produto).subscribe(
         (sucesso) => {
@@ -81,6 +99,7 @@ export class ProdutoDetalheComponent implements OnInit {
 
       //Se chama o método 'salvar()' e NÃO tem um 'id' na URL então vai para a
       //página de cadastro
+      //para CADASTRO
     } else {
       this.produtoService.salvar(this.produto).subscribe(
         (sucesso) => {
